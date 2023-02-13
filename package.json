@@ -8,6 +8,22 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.2.0"
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "nuxt": "^3.2.0",
+    "sass": "^1.58.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^6.0.2",
+    "stylelint-scss": "^3.21.0",
+    "typescript": "^4.9.5",
+    "vue-eslint-parser": "^9.1.0"
   }
 }
