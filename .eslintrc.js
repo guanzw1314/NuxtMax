@@ -22,24 +22,16 @@ module.exports = {
     'no-bitwise': 'off',
     'no-tabs': 'off',
     'array-element-newline': ['error', 'consistent'],
-    indent: [
-      'error',
-      2,
-      { MemberExpression: 0, SwitchCase: 1, ignoredNodes: ['TemplateLiteral'] }
-    ],
     quotes: ['error', 'single'],
     'comma-dangle': ['error', 'never'],
     'object-curly-spacing': ['error', 'always'],
-    'max-len': ['error', 120],
     'no-new': 'off',
     'linebreak-style': 'off',
     'import/extensions': 'off',
-    'eol-last': 'off',
     'no-shadow': 'off',
     'no-unused-vars': 'warn',
     'import/no-cycle': 'off',
     'arrow-parens': 'off',
-    eqeqeq: 'off',
     'no-param-reassign': 'off',
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
@@ -58,7 +50,6 @@ module.exports = {
     'object-curly-newline': 'off',
     'default-case': 'off',
     'import/order': 'off',
-    'no-trailing-spaces': 'off',
     'func-names': 'off',
     radix: 'off',
     'no-unused-expressions': 'off',
@@ -81,6 +72,16 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-return-await': 'off',
     'vue/html-indent': ['error', 2],
-    'vue/singleline-html-element-content-newline': 'off'
+    indent: [
+      'error',
+      2,
+      { MemberExpression: 1, SwitchCase: 1, ignoredNodes: ['TemplateLiteral'] }
+    ],
+    'max-len': ['error', 80],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'space-before-function-paren': 'off',
+    'arrow-body-style': 'off',
+    'implicit-arrow-linebreak': 'off'
   }
 }

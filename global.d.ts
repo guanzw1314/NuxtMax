@@ -1,0 +1,10 @@
+declare type HTTPMethod =
+  | 'GET'
+  | 'HEAD'
+  | 'PATCH'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'CONNECT'
+  | 'OPTIONS'
+  | 'TRACE'
