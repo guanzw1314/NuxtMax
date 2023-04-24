@@ -1,36 +1,49 @@
 import { NitroFetchRequest } from 'nitropack'
-import { FetchOptions } from 'ofetch'
-import { AsyncDataOptions } from '#app'
+import { UseFetchOptions } from '#app'
 import { requestConfig } from '~~/config/requestConfig'
 
-type requestOptionsInt<T> = FetchOptions<'json'> & {
-  key?: string
-  method?: HTTPMethod | Lowercase<HTTPMethod>
-  asyncDataOptions?: AsyncDataOptions<T>
+type FetchRequest =
+  | Ref<NitroFetchRequest>
+  | NitroFetchRequest
+  | (() => NitroFetchRequest)
+
+export interface ResOptions<T> {
+  data?: T
+  code?: number
+  message?: string
+  success?: boolean
 }
 
-/**
- * @name: 请求函数
- * @param { NitroFetchRequest } url 请求地址
- * @param { requestOptionsInt<T> } requestOptionsInt 请求参数
- */
-export const useRequest = async <T = any> (
-  url: NitroFetchRequest,
-  requestOptionsInt?: requestOptionsInt<T>
+export const useRequest = <T>(
+  url: FetchRequest,
+  useFetchOptions?: UseFetchOptions<T>
 ) => {
-  const {
-    key,
-    asyncDataOptions,
-    ...FetchOptions
-  } = { ...requestOptionsInt } as requestOptionsInt<T>
-
-  const request = () => $fetch<T>(url, {
+  return useFetch(url, {
     ...requestConfig,
-    ...FetchOptions
+    ...useFetchOptions
   })
+}
 
-  if (key) {
-    return await useAsyncData<T>(key, request, asyncDataOptions)
+export const useHttp = {
+  get<T = any>(
+    url: string,
+    params?: Record<string, any>,
+    opts?: UseFetchOptions<T>
+  ) {
+    return useRequest<T>(url, { method: 'get', params, ...opts })
+  },
+  post<T = any>(
+    url: string,
+    body?: Record<string, any>,
+    opts?: UseFetchOptions<T>
+  ) {
+    return useRequest<T>(url, { method: 'post', body, ...opts })
+  },
+  put<T = any>(
+    url: string,
+    body?: Record<string, any>,
+    opts?: UseFetchOptions<T>
+  ) {
+    return useRequest<T>(url, { method: 'put', body, ...opts })
   }
-  return await useAsyncData<T>(request, asyncDataOptions)
 }
