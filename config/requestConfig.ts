@@ -1,5 +1,7 @@
 import { FetchOptions } from 'ofetch'
 
+const { VITE_BASE_URL } = import.meta.env
+
 /**
  * @name: 请求配置类型
  */
@@ -19,7 +21,7 @@ export const requestConfig: RequestConfig<'json'> = {
   /**
    * 请求基准路径
    */
-  baseURL: '',
+  baseURL: VITE_BASE_URL,
   /**
    * 请求拦截
    */
@@ -31,7 +33,8 @@ export const requestConfig: RequestConfig<'json'> = {
   /**
    * 响应拦截
    */
-  onResponse() {},
+  onResponse() {
+  },
   /**
    * 响应失败处理
    */

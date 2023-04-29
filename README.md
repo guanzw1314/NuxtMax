@@ -1,10 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Init Template
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> 一个用于基础项目初始化的 [Nuxt](https://nuxtjs.org) 模板。
 
-## Setup
+## 开始
 
-Make sure to install the dependencies:
+安装依赖:
 
 ```bash
 # yarn
@@ -17,7 +17,7 @@ npm install
 pnpm install
 ```
 
-## Development Server
+## 开发
 
 Start the development server on http://localhost:3000
 
@@ -25,18 +25,69 @@ Start the development server on http://localhost:3000
 npm run dev
 ```
 
-## Production
+## 生产
 
-Build the application for production:
+构建用于生产的应用程序:
 
 ```bash
 npm run build
 ```
 
-Locally preview production build:
+本地预览生产构建:
 
 ```bash
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+查看官方 [部署文档](https://nuxt.com/docs/getting-started/deployment)
+
+## 环境变量（.env）
+
+- `.env`文件用于保存开发环境的环境变量
+- `.env.production`文件用于保存生产环境的环境变量
+
+## ESLint
+
+> `JS`代码格式化规范，用于代码运行时语法检查和代码质量评估。
+
+[VSCode](https://code.visualstudio.com/) 插件: [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+> VSCode配置
+
+```json
+// .vscode/settings.json
+
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+> 规则配置
+```js
+//.eslintrc.js
+
+module.exports = {
+  rules: {
+    // ...
+  }
+}
+```
+
+## Stylelint
+
+> `css`样式格式化规范，用于代码运行时语法检查和代码质量评估。
+
+[VSCode](https://code.visualstudio.com/) 插件: [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+
+```js
+// .stylelintrc.js
+
+module.exports = {
+  rules: {
+    // ...
+  }
+}
+```
