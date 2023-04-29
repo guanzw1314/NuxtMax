@@ -82,6 +82,19 @@ module.exports = {
 
 [VSCode](https://code.visualstudio.com/) 插件: [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
+> VSCode配置
+
+```json
+// .vscode/settings.json
+
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.stylelint": true
+  }
+}
+```
+
 ```js
 // .stylelintrc.js
 
