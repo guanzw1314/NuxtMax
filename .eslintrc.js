@@ -11,7 +11,11 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript'
   ],
   parser: 'vue-eslint-parser',
-  plugins: ['@typescript-eslint'],
+  plugins: [
+    '@typescript-eslint',
+    'unused-imports',
+    'simple-import-sort'
+  ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020
@@ -82,6 +86,9 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     'space-before-function-paren': 'off',
     'arrow-body-style': 'off',
-    'implicit-arrow-linebreak': 'off'
+    'implicit-arrow-linebreak': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error'
   }
 }
