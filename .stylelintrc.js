@@ -97,6 +97,9 @@ module.exports = {
       'text-shadow',
       'resize',
       'transition'
-    ]
+    ],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["deep"]
+    }]
   }
 }
